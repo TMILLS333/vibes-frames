@@ -3,47 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibes Frames - Hello World</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: white;
-        }
-        
-        h1 {
-            font-size: 4rem;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        p {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-            opacity: 0.9;
-        }
-        
-        .status {
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background: rgba(255,255,255,0.2);
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-        }
-    </style>
+    <title>Recuerdo Frames - The Oliver Cat Era</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>🎉 Hello World!</h1>
-    <p>Vibes Frames is coming soon...</p>
-    <div class="status">
-        ✅ Cloudflare Pages deployment test successful
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Side: Frame Gallery -->
+        <div class="gallery-side" id="gallerySide">
+            <div class="frames-container" id="framesContainer">
+                <!-- Frames will be dynamically loaded -->
+            </div>
+            
+            <!-- Expanded Frame View (hidden by default) -->
+            <div class="expanded-view" id="expandedView" style="display: none;">
+                <img id="expandedFrame" src="" alt="Expanded frame">
+                
+                <!-- Thumbnail Gallery -->
+                <div class="thumbnail-gallery">
+                    <button class="nav-arrow" id="prevArrow">←</button>
+                    <div class="thumbnails-container" id="thumbnailsContainer">
+                        <!-- Thumbnails will be loaded here -->
+                    </div>
+                    <button class="nav-arrow" id="nextArrow">→</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Info Card -->
+        <div class="info-side" id="infoSide">
+            <!-- Default State: Section Intro -->
+            <div class="section-intro" id="sectionIntro">
+                <h1>THE OLIVER CAT ERA</h1>
+                <div class="divider"></div>
+                
+                <div class="metadata">
+                    <p><strong>VERSION:</strong> V1</p>
+                    <p><strong>MODEL:</strong> googleai/gemini-1.5-pro-latest</p>
+                    <p><strong>DATE:</strong> July 2024</p>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <h2>THE CONCEPT:</h2>
+                <p>A virtual gallery where Day of the Dead frames stayed live on the website - building a community ofrenda together.</p>
+                
+                <div class="divider"></div>
+                
+                <h2>THE REALITY:</h2>
+                <p>Learning Firebase Studio + time constraints led to a pivot toward personal keepsakes instead of a persistent gallery.</p>
+                <p class="cta">Click any frame to explore prompts, learnings, and iterations →</p>
+            </div>
+
+            <!-- Clicked State: Prompt Card (hidden by default) -->
+            <div class="prompt-card" id="promptCard" style="display: none;">
+                <button class="close-btn" id="closeBtn">✕</button>
+                
+                <p class="frame-counter" id="frameCounter">Frame 1 of 8</p>
+                
+                <div class="metadata">
+                    <p><strong>VERSION:</strong> <span id="cardVersion">V1</span></p>
+                    <p><strong>MODEL:</strong> <span id="cardModel">googleai/gemini-1.5-pro-latest</span></p>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <!-- Toggles -->
+                <div class="toggle-section">
+                    <button class="toggle-btn" data-target="fullPrompt">
+                        <span class="arrow">▶</span> FULL PROMPT
+                    </button>
+                    <div class="toggle-content" id="fullPrompt">
+                        <p id="promptText"></p>
+                    </div>
+                </div>
+                
+                <div class="toggle-section">
+                    <button class="toggle-btn" data-target="whatWorked">
+                        <span class="arrow">▶</span> WHAT WORKED
+                    </button>
+                    <div class="toggle-content" id="whatWorked">
+                        <ul id="workedList"></ul>
+                    </div>
+                </div>
+                
+                <div class="toggle-section">
+                    <button class="toggle-btn" data-target="whatDidnt">
+                        <span class="arrow">▶</span> WHAT DIDN'T WORK
+                    </button>
+                    <div class="toggle-content" id="whatDidnt">
+                        <ul id="didntList"></ul>
+                    </div>
+                </div>
+                
+                <div class="toggle-section">
+                    <button class="toggle-btn" data-target="whyChanged">
+                        <span class="arrow">▶</span> WHY IT CHANGED
+                    </button>
+                    <div class="toggle-content" id="whyChanged">
+                        <div id="changeStory"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
