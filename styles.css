@@ -276,6 +276,19 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Tighter spacing for V2 section */
+#v2Section .intro-card h1 {
+    margin-bottom: 1rem;
+}
+
+#v2Section .divider {
+    margin: 1.25rem 0;
+}
+
+#v2Section .intro-card .section {
+    margin-bottom: 1rem;
+}
+
 .intro-card .section h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
