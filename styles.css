@@ -272,17 +272,17 @@ body {
     color: #FFA500;
 }
 
-.intro-card .section {
+.content-block {
     margin-bottom: 1.5rem;
 }
 
-.intro-card .section h3 {
+.content-block h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #FFA500;
 }
 
-.intro-card .section p {
+.content-block p {
     line-height: 1.6;
     color: #e0e0e0;
 }
@@ -333,7 +333,7 @@ body {
     margin: 0.5rem 0 !important;
 }
 
-#v2Section .intro-card .section {
+#v2Section .content-block {
     margin-bottom: 0.25rem !important;
 }
 
@@ -341,12 +341,12 @@ body {
     margin-bottom: 0.25rem !important;
 }
 
-#v2Section .intro-card .section h3 {
+#v2Section .content-block h3 {
     margin-bottom: 0.35rem !important;
     margin-top: 0.25rem !important;
 }
 
-#v2Section .intro-card .section p {
+#v2Section .content-block p {
     margin-bottom: 0.25rem !important;
 }
 
