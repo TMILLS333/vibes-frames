@@ -7,164 +7,162 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- LEFT SIDE: Gallery -->
-        <div class="gallery-side" id="gallerySide">
-            <div class="floating-frames" id="floatingFrames">
-                <div class="frame" data-frame="1">
-                    <img src="./frames/frame-1.jpg" alt="Oliver Cat Frame 1">
-                </div>
-                <div class="frame" data-frame="2">
-                    <img src="./frames/frame-2.png" alt="Oliver Cat Frame 2">
-                </div>
-                <div class="frame" data-frame="3">
-                    <img src="./frames/frame-3.png" alt="Oliver Cat Frame 3">
-                </div>
-                <div class="frame" data-frame="4">
-                    <img src="./frames/frame-4.png" alt="Oliver Cat Frame 4">
-                </div>
-                <div class="frame" data-frame="5">
-                    <img src="./frames/frame-5.png" alt="Oliver Cat Frame 5">
-                </div>
-                <div class="frame" data-frame="6">
-                    <img src="./frames/frame-6.png" alt="Oliver Cat Frame 6">
-                </div>
-                <div class="frame" data-frame="7">
-                    <img src="./frames/frame-7.png" alt="Oliver Cat Frame 7">
-                </div>
-                <div class="frame" data-frame="8">
-                    <img src="./frames/frame-8.png" alt="Oliver Cat Frame 8">
+    <!-- V2 SECTION - Details Left, Frames Right -->
+    <div class="section" id="v2Section">
+        <div class="container reverse">
+            <!-- LEFT SIDE: Details -->
+            <div class="details-side">
+                <div class="intro-card">
+                    <div class="version-badge">V2</div>
+                    <h1>TEXT INTEGRATION ERA</h1>
+                    <div class="divider"></div>
+                    
+                    <div class="meta-info">
+                        <p><strong>VERSION:</strong> V2</p>
+                        <p><strong>MODEL:</strong> googleai/gemini-2.5-flash-image-preview</p>
+                        <p><strong>DATE:</strong> October 2024</p>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h3>THE EVOLUTION</h3>
+                        <p>The breakthrough came when we stopped treating text as an afterthought and started designing it as part of the frame's tapestry.</p>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h3>THE REFINED PROMPT</h3>
+                        <div class="code-block">
+                            <code>"Within the generated decorative border, place the text '2025 Dia de Los Muertos' directly below the user's original photo. This text is a critical part of the design. It must be rendered in an elegant font that is stylistically integrated with the border itself, as if it were embroidered, painted, or carved along with the other decorative elements. The text must not look like plain text overlaid on the image."</code>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h3>KEY IMPROVEMENTS</h3>
+                        <ul class="schema-list">
+                            <li>Standardized text: "2025 Dia de Los Muertos"</li>
+                            <li>Material quality: "embroidered, painted, or carved"</li>
+                            <li>Explicit integration: "not plain text overlaid"</li>
+                            <li>Cultural guardrails added</li>
+                            <li>Aspect ratio control (1:1)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <p class="cta">Click any frame to see the prompt evolution →</p>
                 </div>
             </div>
-            
-            <!-- Expanded view (hidden by default) -->
-            <div class="expanded-view" id="expandedView" style="display: none;">
-                <div class="expanded-frame">
-                    <img id="expandedImage" src="" alt="Expanded frame">
-                </div>
-                <div class="thumbnail-carousel">
-                    <button class="carousel-arrow" id="prevArrow">&larr;</button>
-                    <div class="thumbnails" id="thumbnails"></div>
-                    <button class="carousel-arrow" id="nextArrow">&rarr;</button>
+
+            <!-- RIGHT SIDE: Gallery -->
+            <div class="gallery-side">
+                <div class="floating-frames" id="v2FloatingFrames">
+                    <div class="frame" data-frame="v2-1" data-section="v2">
+                        <img src="./frames/v2-frame-1.jpg" alt="V2 Frame 1" onerror="this.style.display='none'">
+                    </div>
+                    <div class="frame" data-frame="v2-2" data-section="v2">
+                        <img src="./frames/v2-frame-2.jpg" alt="V2 Frame 2" onerror="this.style.display='none'">
+                    </div>
+                    <div class="frame" data-frame="v2-3" data-section="v2">
+                        <img src="./frames/v2-frame-3.jpg" alt="V2 Frame 3" onerror="this.style.display='none'">
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- RIGHT SIDE: Details -->
-        <div class="details-side" id="detailsSide">
-            <div class="intro-card" id="introCard">
-                <h1>THE OLIVER CAT ERA</h1>
-                <div class="divider"></div>
-                
-                <div class="meta-info">
-                    <p><strong>VERSION:</strong> V1</p>
-                    <p><strong>MODEL:</strong> googleai/gemini-1.5-pro-latest</p>
-                    <p><strong>DATE:</strong> July 2024</p>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <div class="section">
-                    <h3>THE CONCEPT</h3>
-                    <p>A virtual gallery where Day of the Dead frames stayed live on the website - building a community ofrenda together.</p>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <div class="section">
-                    <h3>THE PROMPT</h3>
-                    <div class="code-block">
-                        <code>"Generate a Day of the Dead-inspired decorative frame around the provided image. The frame should include sugar skulls, flowers, and use purples, greens, and blues. Ensure the frame is family-friendly. Display the name ${firstName} ${lastName} within the decorative frame around the photo."</code>
+    <!-- TRANSITION -->
+    <div class="section-transition">
+        <div class="transition-content">
+            <div class="version-flow">
+                <span class="version-badge">V2</span>
+                <div class="arrow">→</div>
+                <span class="version-badge">V1</span>
+            </div>
+            <p class="transition-text">Where it all began...</p>
+        </div>
+    </div>
+
+    <!-- V1 SECTION - Frames Left, Details Right -->
+    <div class="section" id="v1Section">
+        <div class="container">
+            <!-- LEFT SIDE: Gallery -->
+            <div class="gallery-side">
+                <div class="floating-frames" id="v1FloatingFrames">
+                    <div class="frame" data-frame="1" data-section="v1">
+                        <img src="./frames/frame-1.jpg" alt="Oliver Cat Frame 1" onerror="this.style.display='none'">
+                    </div>
+                    <div class="frame" data-frame="2" data-section="v1">
+                        <img src="./frames/frame-2.png" alt="Oliver Cat Frame 2" onerror="this.style.display='none'">
+                    </div>
+                    <div class="frame" data-frame="3" data-section="v1">
+                        <img src="./frames/frame-3.png" alt="Oliver Cat Frame 3" onerror="this.style.display='none'">
+                    </div>
+                    <div class="frame" data-frame="4" data-section="v1">
+                        <img src="./frames/frame-4.png" alt="Oliver Cat Frame 4" onerror="this.style.display='none'">
+                    </div>
+                    <div class="frame" data-frame="5" data-section="v1">
+                        <img src="./frames/frame-5.png" alt="Oliver Cat Frame 5" onerror="this.style.display='none'">
+                    </div>
+                    <div class="frame" data-frame="6" data-section="v1">
+                        <img src="./frames/frame-6.png" alt="Oliver Cat Frame 6" onerror="this.style.display='none'">
+                    </div>
+                    <div class="frame" data-frame="7" data-section="v1">
+                        <img src="./frames/frame-7.png" alt="Oliver Cat Frame 7" onerror="this.style.display='none'">
+                    </div>
+                    <div class="frame" data-frame="8" data-section="v1">
+                        <img src="./frames/frame-8.png" alt="Oliver Cat Frame 8" onerror="this.style.display='none'">
                     </div>
                 </div>
-                
-                <div class="divider"></div>
-                
-                <div class="section">
-                    <h3>INPUT SCHEMA</h3>
-                    <ul class="schema-list">
-                        <li><code>firstName</code> - The first name to display on the frame</li>
-                        <li><code>lastName</code> - The last name to display on the frame</li>
-                        <li><code>imageUri</code> - Base64 data URI</li>
-                    </ul>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <p class="cta">Click any frame to explore iterations and learnings →</p>
             </div>
-            
-            <!-- Prompt Card (hidden by default) -->
-            <div class="prompt-card" id="promptCard" style="display: none;">
-                <button class="close-btn" id="closeBtn">&times;</button>
-                <p class="frame-counter" id="frameCounter">Frame 1 of 8</p>
-                
-                <div class="meta-info">
-                    <p><strong>VERSION:</strong> V1</p>
-                    <p><strong>MODEL:</strong> googleai/gemini-1.5-pro-latest</p>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <div class="toggle-section">
-                    <button class="toggle-btn" data-target="fullPrompt">
-                        <span class="toggle-icon">▶</span> FULL PROMPT
-                    </button>
-                    <div class="toggle-content" id="fullPrompt">
+
+            <!-- RIGHT SIDE: Details -->
+            <div class="details-side">
+                <div class="intro-card" id="v1IntroCard">
+                    <div class="version-badge">V1</div>
+                    <h1>THE OLIVER CAT ERA</h1>
+                    <div class="divider"></div>
+                    
+                    <div class="meta-info">
+                        <p><strong>VERSION:</strong> V1</p>
+                        <p><strong>MODEL:</strong> googleai/gemini-1.5-pro-latest</p>
+                        <p><strong>DATE:</strong> July 2024</p>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h3>THE CONCEPT</h3>
+                        <p>A virtual gallery where Day of the Dead frames stayed live on the website - building a community ofrenda together.</p>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h3>THE PROMPT</h3>
                         <div class="code-block">
                             <code>"Generate a Day of the Dead-inspired decorative frame around the provided image. The frame should include sugar skulls, flowers, and use purples, greens, and blues. Ensure the frame is family-friendly. Display the name ${firstName} ${lastName} within the decorative frame around the photo."</code>
                         </div>
                     </div>
-                </div>
-                
-                <div class="toggle-section">
-                    <button class="toggle-btn" data-target="whatWorked">
-                        <span class="toggle-icon">▶</span> WHAT WORKED
-                    </button>
-                    <div class="toggle-content" id="whatWorked">
-                        <ul>
-                            <li>Basic frame structure appeared consistently</li>
-                            <li>Colors were vibrant and eye-catching</li>
-                            <li>Cultural elements (skulls, flowers) were present</li>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="section">
+                        <h3>INPUT SCHEMA</h3>
+                        <ul class="schema-list">
+                            <li><code>firstName</code> - The first name to display on the frame</li>
+                            <li><code>lastName</code> - The last name to display on the frame</li>
+                            <li><code>imageUri</code> - Base64 data URI</li>
                         </ul>
                     </div>
-                </div>
-                
-                <div class="toggle-section">
-                    <button class="toggle-btn" data-target="whatDidnt">
-                        <span class="toggle-icon">▶</span> WHAT DIDN'T WORK
-                    </button>
-                    <div class="toggle-content" id="whatDidnt">
-                        <ul>
-                            <li>Text was frequently misspelled ("Olie Cater", "sfdsdf")</li>
-                            <li>Inconsistent styling across generations</li>
-                            <li>Sometimes too generic or Halloween-ish</li>
-                            <li>No clear boundaries or composition rules</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="toggle-section">
-                    <button class="toggle-btn" data-target="whyChanged">
-                        <span class="toggle-icon">▶</span> WHY IT CHANGED
-                    </button>
-                    <div class="toggle-content" id="whyChanged">
-                        <h4>ORIGINAL VISION</h4>
-                        <p>Virtual gallery - a living digital ofrenda where all submissions stayed on the website as a community memorial.</p>
-                        
-                        <h4>THE REALITY</h4>
-                        <ul>
-                            <li>Off-hours project with time constraints</li>
-                            <li>Learning Firebase Studio while building</li>
-                            <li>Gallery setup wasn't practical within timeline</li>
-                        </ul>
-                        
-                        <h4>THE PIVOT</h4>
-                        <p>Shifted to keepsake approach - downloadable frames for personal use. More inclusive, simpler to build, faster to ship.</p>
-                        
-                        <h4>WHAT I LEARNED</h4>
-                        <p>Sometimes constraints force better solutions. The keepsake model ended up being more meaningful because people could keep and share their frames however they wanted.</p>
-                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <p class="cta">Click any frame to explore iterations and learnings →</p>
                 </div>
             </div>
         </div>
