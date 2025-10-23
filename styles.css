@@ -8,7 +8,13 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: #000000;
     color: #ffffff;
-    overflow: hidden;
+    overflow-x: hidden; /* Only prevent horizontal scroll */
+}
+
+/* SECTION WRAPPER */
+.section {
+    min-height: 100vh;
+    width: 100%;
 }
 
 .container {
@@ -16,6 +22,63 @@ body {
     grid-template-columns: 1fr 500px;
     height: 100vh;
     width: 100vw;
+}
+
+/* REVERSE LAYOUT for V2 */
+.container.reverse {
+    grid-template-columns: 500px 1fr;
+}
+
+/* VERSION BADGE */
+.version-badge {
+    display: inline-block;
+    background: rgba(255, 165, 0, 0.2);
+    border: 2px solid #FFA500;
+    color: #FFA500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* SECTION TRANSITION */
+.section-transition {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #000000, #1a0a00, #000000);
+    border-top: 1px solid rgba(255, 165, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 165, 0, 0.1);
+}
+
+.transition-content {
+    text-align: center;
+}
+
+.version-flow {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.version-flow .arrow {
+    color: #FFA500;
+    font-size: 2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+.transition-text {
+    color: #888;
+    font-style: italic;
+    font-size: 1.1rem;
 }
 
 /* LEFT SIDE - GALLERY */
@@ -30,6 +93,13 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 100%;
+}
+
+/* V2 frames - only 3 frames */
+#v2FloatingFrames {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .frame {
@@ -202,17 +272,17 @@ body {
     color: #FFA500;
 }
 
-.section {
+.intro-card .section {
     margin-bottom: 1.5rem;
 }
 
-.section h3 {
+.intro-card .section h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #FFA500;
 }
 
-.section p {
+.intro-card .section p {
     line-height: 1.6;
     color: #e0e0e0;
 }
