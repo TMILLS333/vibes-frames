@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">&larr;</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">&rarr;</button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
     <!-- V2 SECTION - Details Left, Frames Right -->
     <div class="section" id="v2Section">
         <div class="container reverse">
