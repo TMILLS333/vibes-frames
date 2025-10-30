@@ -11,7 +11,229 @@ body {
     overflow-x: hidden;
 }
 
-/* LIGHTBOX MODAL */
+/* ========================================
+   ORIGIN STORY TIMELINE
+   ======================================== */
+
+.origin-timeline {
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, #000000, #0a0a0a);
+}
+
+.origin-header {
+    text-align: center;
+    margin-bottom: 6rem;
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.version-badge.origin {
+    background: rgba(138, 43, 226, 0.2);
+    border-color: #8A2BE2;
+    color: #8A2BE2;
+}
+
+.origin-header h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, #8A2BE2, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.origin-subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* TIMELINE CONTAINER */
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+/* VERTICAL LINE */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        transparent,
+        rgba(138, 43, 226, 0.3) 10%,
+        rgba(138, 43, 226, 0.6) 50%,
+        rgba(138, 43, 226, 0.3) 90%,
+        transparent
+    );
+    transform: translateX(-50%);
+}
+
+/* TIMELINE STEPS */
+.timeline-step {
+    position: relative;
+    margin-bottom: 8rem;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scroll animation states */
+.timeline-step.step-visible {
+    opacity: 1;
+}
+
+.timeline-step.step-right {
+    transform: translateX(-100px);
+}
+
+.timeline-step.step-right.step-visible {
+    transform: translateX(0);
+}
+
+.timeline-step.step-left {
+    transform: translateX(100px);
+}
+
+.timeline-step.step-left.step-visible {
+    transform: translateX(0);
+}
+
+/* STEP NUMBER - Center Circle */
+.step-number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #8A2BE2, #6A1BB2);
+    border: 3px solid rgba(138, 43, 226, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    z-index: 2;
+    box-shadow: 
+        0 0 30px rgba(138, 43, 226, 0.6),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+.timeline-step.step-visible .step-number {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 
+            0 0 30px rgba(138, 43, 226, 0.6),
+            inset 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 
+            0 0 50px rgba(138, 43, 226, 0.9),
+            inset 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* STEP CARD - Positioned Left or Right */
+.step-card {
+    width: 45%;
+    padding: 2.5rem;
+    background: rgba(20, 20, 20, 0.8);
+    border: 2px solid rgba(138, 43, 226, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(138, 43, 226, 0.2);
+    transition: all 0.4s ease;
+}
+
+.step-right .step-card {
+    margin-left: 55%;
+}
+
+.step-left .step-card {
+    margin-right: 55%;
+}
+
+.step-card:hover {
+    border-color: rgba(138, 43, 226, 0.6);
+    box-shadow: 0 12px 48px rgba(138, 43, 226, 0.4);
+    transform: translateY(-5px);
+}
+
+.step-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #8A2BE2;
+    letter-spacing: 0.05em;
+}
+
+.step-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+/* ORIGIN FOOTER */
+.origin-footer {
+    text-align: center;
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+    }
+    
+    .step-number {
+        left: 30px;
+    }
+    
+    .step-card {
+        width: calc(100% - 100px);
+        margin-left: 100px !important;
+        margin-right: 0 !important;
+    }
+    
+    .timeline-step.step-right,
+    .timeline-step.step-left {
+        transform: translateX(50px);
+    }
+    
+    .timeline-step.step-right.step-visible,
+    .timeline-step.step-left.step-visible {
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   LIGHTBOX MODAL
+   ======================================== */
 .lightbox {
     display: none;
     position: fixed;

@@ -1,4 +1,28 @@
-// Lightbox functionality
+// ========================================
+// SCROLL ANIMATIONS FOR ORIGIN TIMELINE
+// ========================================
+
+// Intersection Observer for timeline steps
+const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('step-visible');
+        }
+    });
+}, {
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+});
+
+// Observe all timeline steps
+document.querySelectorAll('.timeline-step').forEach(step => {
+    timelineObserver.observe(step);
+});
+
+// ========================================
+// LIGHTBOX FUNCTIONALITY
+// ========================================
+
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightboxImage');
 const lightboxCaption = document.getElementById('lightboxCaption');
