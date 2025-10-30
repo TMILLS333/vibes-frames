@@ -20,6 +20,23 @@ document.querySelectorAll('.timeline-step').forEach(step => {
 });
 
 // ========================================
+// FORM EVOLUTION HORIZONTAL SCROLL PROGRESS
+// ========================================
+
+const horizontalScrollWrapper = document.getElementById('horizontalScrollWrapper');
+const progressBar = document.getElementById('progressBar');
+
+if (horizontalScrollWrapper && progressBar) {
+    horizontalScrollWrapper.addEventListener('scroll', () => {
+        const scrollLeft = horizontalScrollWrapper.scrollLeft;
+        const scrollWidth = horizontalScrollWrapper.scrollWidth - horizontalScrollWrapper.clientWidth;
+        const scrollPercentage = (scrollLeft / scrollWidth) * 100;
+        
+        progressBar.style.width = `${scrollPercentage}%`;
+    });
+}
+
+// ========================================
 // LIGHTBOX FUNCTIONALITY
 // ========================================
 
