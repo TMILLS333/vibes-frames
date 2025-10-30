@@ -204,30 +204,354 @@ body {
     border-top: 1px solid rgba(138, 43, 226, 0.2);
 }
 
-/* Responsive Timeline */
+/* ========================================
+   FORM DESIGN EVOLUTION SECTION
+   ======================================== */
+
+.form-evolution-section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem 0;
+    background: linear-gradient(to bottom, #0a0a0a, #000000);
+}
+
+.form-evolution-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+}
+
+.version-badge.form {
+    background: rgba(255, 165, 0, 0.2);
+    border: 2px solid #FFA500;
+    color: #FFD700;
+}
+
+.form-evolution-header h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, #FFA500, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.evolution-subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* HORIZONTAL SCROLL CONTAINER */
+.horizontal-scroll-container {
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.scroll-hint {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #FFD700;
+    font-size: 1.1rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+.horizontal-scroll-wrapper {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem 4rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 165, 0, 0.5) rgba(0, 0, 0, 0.3);
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 165, 0, 0.5);
+    border-radius: 4px;
+}
+
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 165, 0, 0.7);
+}
+
+/* FORM CARD */
+.form-card {
+    flex: 0 0 500px;
+    scroll-snap-align: center;
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid rgba(255, 165, 0, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.4);
+}
+
+.form-card:hover {
+    border-color: rgba(255, 165, 0, 0.6);
+    box-shadow: 0 0 50px rgba(255, 165, 0, 0.6);
+    transform: translateY(-10px);
+}
+
+.form-card.highlight-card {
+    border-color: rgba(0, 255, 136, 0.5);
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.4);
+}
+
+.form-card.highlight-card:hover {
+    border-color: rgba(0, 255, 136, 0.8);
+    box-shadow: 0 0 60px rgba(0, 255, 136, 0.6);
+}
+
+/* CARD HEADER */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.stage-badge {
+    background: rgba(255, 165, 0, 0.2);
+    border: 1px solid #FFA500;
+    color: #FFD700;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stage-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(255, 165, 0, 0.5);
+}
+
+/* BLUEPRINT CARD SPECIAL STYLING */
+.blueprint-card {
+    flex: 0 0 600px;
+    background: rgba(20, 20, 30, 0.95);
+    border-color: rgba(138, 43, 226, 0.5);
+    box-shadow: 0 0 40px rgba(138, 43, 226, 0.5);
+}
+
+.blueprint-card:hover {
+    border-color: rgba(138, 43, 226, 0.8);
+    box-shadow: 0 0 60px rgba(138, 43, 226, 0.7);
+}
+
+.blueprint-content {
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(0, 0, 10, 0.5);
+    border: 1px dashed rgba(138, 43, 226, 0.4);
+    border-radius: 8px;
+}
+
+.blueprint-grid {
+    position: relative;
+}
+
+.blueprint-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(138, 43, 226, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(138, 43, 226, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blueprint-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #DA70D6;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+}
+
+.blueprint-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #b0b0b0;
+}
+
+.blueprint-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* FORM SCREENSHOT */
+.form-screenshot {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.form-card:hover .form-screenshot img {
+    transform: scale(1.05);
+}
+
+/* CARD ANNOTATION */
+.card-annotation {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 165, 0, 0.2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.card-annotation strong {
+    color: #FFD700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.card-annotation em {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* LEARNINGS CARD */
+.learnings-card {
+    flex: 0 0 700px;
+    background: rgba(30, 20, 40, 0.95);
+    border-color: rgba(218, 112, 214, 0.5);
+    box-shadow: 0 0 50px rgba(218, 112, 214, 0.5);
+}
+
+.learnings-card:hover {
+    border-color: rgba(218, 112, 214, 0.8);
+    box-shadow: 0 0 70px rgba(218, 112, 214, 0.7);
+}
+
+.learnings-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.learning-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.learning-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.learning-section li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.learning-section li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: inherit;
+}
+
+/* SCROLL PROGRESS */
+.scroll-progress {
+    width: 90%;
+    max-width: 1200px;
+    height: 4px;
+    background: rgba(255, 165, 0, 0.1);
+    border-radius: 2px;
+    margin: 2rem auto 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #FFA500, #FFD700);
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+
+/* EVOLUTION FOOTER */
+.evolution-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(255, 165, 0, 0.2);
+}
+
+/* Responsive Design for Form Evolution */
 @media (max-width: 768px) {
-    .timeline-line {
-        left: 30px;
+    .form-card {
+        flex: 0 0 350px;
     }
     
-    .step-number {
-        left: 30px;
+    .blueprint-card {
+        flex: 0 0 400px;
     }
     
-    .step-card {
-        width: calc(100% - 100px);
-        margin-left: 100px !important;
-        margin-right: 0 !important;
+    .learnings-card {
+        flex: 0 0 450px;
     }
     
-    .timeline-step.step-right,
-    .timeline-step.step-left {
-        transform: translateX(50px);
+    .learnings-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
-    .timeline-step.step-right.step-visible,
-    .timeline-step.step-left.step-visible {
-        transform: translateX(0);
+    .form-screenshot {
+        height: 300px;
     }
 }
 
@@ -844,4 +1168,31 @@ body {
 .details-side::-webkit-scrollbar-thumb:hover,
 .gallery-side::-webkit-scrollbar-thumb:hover {
     background: rgba(138, 43, 226, 0.7);
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+    }
+    
+    .step-number {
+        left: 30px;
+    }
+    
+    .step-card {
+        width: calc(100% - 100px);
+        margin-left: 100px !important;
+        margin-right: 0 !important;
+    }
+    
+    .timeline-step.step-right,
+    .timeline-step.step-left {
+        transform: translateX(50px);
+    }
+    
+    .timeline-step.step-right.step-visible,
+    .timeline-step.step-left.step-visible {
+        transform: translateX(0);
+    }
 }
