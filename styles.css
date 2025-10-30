@@ -49,7 +49,7 @@ body {
 .origin-header h1 {
     font-size: 3rem;
     margin: 1rem 0;
-    background: linear-gradient(135deg, #8A2BE2, #FFA500);
+    background: linear-gradient(135deg, #8A2BE2, #DA70D6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -288,12 +288,12 @@ body {
 }
 
 .lightbox-caption {
-    color: #FFA500;
+    color: #DA70D6;
     font-size: 1.1rem;
     text-align: center;
     padding: 0.5rem 1rem;
-    background: rgba(255, 165, 0, 0.1);
-    border: 1px solid rgba(255, 165, 0, 0.3);
+    background: rgba(138, 43, 226, 0.1);
+    border: 1px solid rgba(138, 43, 226, 0.3);
     border-radius: 4px;
 }
 
@@ -301,9 +301,9 @@ body {
     position: absolute;
     top: 2rem;
     right: 2rem;
-    background: rgba(255, 165, 0, 0.2);
-    border: 2px solid #FFA500;
-    color: #FFA500;
+    background: rgba(138, 43, 226, 0.2);
+    border: 2px solid #8A2BE2;
+    color: #DA70D6;
     font-size: 3rem;
     width: 60px;
     height: 60px;
@@ -318,7 +318,7 @@ body {
 }
 
 .lightbox-close:hover {
-    background: rgba(255, 165, 0, 0.4);
+    background: rgba(138, 43, 226, 0.4);
     transform: rotate(90deg) scale(1.1);
 }
 
@@ -326,9 +326,9 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 165, 0, 0.2);
-    border: 2px solid #FFA500;
-    color: #FFA500;
+    background: rgba(138, 43, 226, 0.2);
+    border: 2px solid #8A2BE2;
+    color: #DA70D6;
     font-size: 2rem;
     width: 50px;
     height: 50px;
@@ -342,7 +342,7 @@ body {
 }
 
 .lightbox-nav:hover {
-    background: rgba(255, 165, 0, 0.4);
+    background: rgba(138, 43, 226, 0.4);
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -375,9 +375,9 @@ body {
 /* VERSION BADGE */
 .version-badge {
     display: inline-block;
-    background: rgba(255, 165, 0, 0.2);
-    border: 2px solid #FFA500;
-    color: #FFA500;
+    background: rgba(138, 43, 226, 0.2);
+    border: 2px solid #8A2BE2;
+    color: #DA70D6;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-weight: bold;
@@ -391,9 +391,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, #000000, #1a0a00, #000000);
-    border-top: 1px solid rgba(255, 165, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 165, 0, 0.1);
+    background: linear-gradient(to bottom, #000000, #0a0005, #000000);
+    border-top: 1px solid rgba(138, 43, 226, 0.2);
+    border-bottom: 1px solid rgba(138, 43, 226, 0.2);
 }
 
 .transition-content {
@@ -408,7 +408,7 @@ body {
 }
 
 .version-flow .arrow {
-    color: #FFA500;
+    color: #DA70D6;
     font-size: 2rem;
     animation: pulse 2s ease-in-out infinite;
 }
@@ -429,6 +429,7 @@ body {
     position: relative;
     padding: 4rem 2rem;
     overflow-y: auto;
+    background: linear-gradient(135deg, rgba(10, 0, 10, 0.3), rgba(0, 0, 0, 0.8));
 }
 
 .floating-frames {
@@ -451,7 +452,7 @@ body {
     transition: all 0.3s ease;
     animation: float 6s ease-in-out infinite;
     aspect-ratio: 1;
-    background: rgba(255, 165, 0, 0.1);
+    background: rgba(255, 165, 0, 0.05);
     border: 2px solid rgba(255, 165, 0, 0.3);
     border-radius: 8px;
     display: flex;
@@ -524,9 +525,9 @@ body {
 }
 
 .carousel-arrow {
-    background: rgba(255, 165, 0, 0.2);
-    border: 2px solid #FFA500;
-    color: #FFA500;
+    background: rgba(138, 43, 226, 0.2);
+    border: 2px solid #8A2BE2;
+    color: #DA70D6;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -536,7 +537,7 @@ body {
 }
 
 .carousel-arrow:hover {
-    background: rgba(255, 165, 0, 0.4);
+    background: rgba(138, 43, 226, 0.4);
     transform: scale(1.1);
 }
 
@@ -560,7 +561,7 @@ body {
     opacity: 0.5;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    background: rgba(255, 165, 0, 0.1);
+    background: rgba(138, 43, 226, 0.1);
 }
 
 .thumbnail:hover {
@@ -569,8 +570,8 @@ body {
 
 .thumbnail.active {
     opacity: 1;
-    border: 2px solid #FFA500;
-    box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
+    border: 2px solid #8A2BE2;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
 }
 
 .thumbnail img {
@@ -583,21 +584,28 @@ body {
 /* RIGHT SIDE - DETAILS */
 .details-side {
     width: 500px;
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(20, 10, 25, 0.9);
     padding: 3rem;
     overflow-y: auto;
-    border-left: 1px solid rgba(255, 165, 0, 0.2);
+    border-left: 1px solid rgba(138, 43, 226, 0.3);
 }
 
 .intro-card h1 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #FFA500;
+    background: linear-gradient(135deg, #8A2BE2, #DA70D6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .divider {
     height: 1px;
-    background: rgba(255, 165, 0, 0.3);
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(138, 43, 226, 0.5), 
+        transparent
+    );
     margin: 2rem 0;
 }
 
@@ -612,7 +620,7 @@ body {
 }
 
 .meta-info strong {
-    color: #FFA500;
+    color: #DA70D6;
 }
 
 .content-block {
@@ -622,7 +630,7 @@ body {
 .content-block h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #FFA500;
+    color: #DA70D6;
 }
 
 .content-block p {
@@ -632,7 +640,7 @@ body {
 
 .code-block {
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 165, 0, 0.3);
+    border: 1px solid rgba(138, 43, 226, 0.3);
     border-radius: 4px;
     padding: 1rem;
     margin-top: 0.5rem;
@@ -657,13 +665,13 @@ body {
 }
 
 .schema-list code {
-    color: #FFA500;
+    color: #DA70D6;
     font-family: 'Courier New', monospace;
 }
 
 .cta {
     font-style: italic;
-    color: #FFA500;
+    color: #DA70D6;
     margin-top: 2rem;
 }
 
@@ -718,7 +726,7 @@ body {
     right: 0;
     background: none;
     border: none;
-    color: #FFA500;
+    color: #DA70D6;
     font-size: 2rem;
     cursor: pointer;
     padding: 0.5rem;
@@ -741,9 +749,9 @@ body {
 
 .toggle-btn {
     width: 100%;
-    background: rgba(255, 165, 0, 0.1);
-    border: 1px solid rgba(255, 165, 0, 0.3);
-    color: #FFA500;
+    background: rgba(138, 43, 226, 0.1);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    color: #DA70D6;
     padding: 1rem;
     text-align: left;
     cursor: pointer;
@@ -756,7 +764,8 @@ body {
 }
 
 .toggle-btn:hover {
-    background: rgba(255, 165, 0, 0.2);
+    background: rgba(138, 43, 226, 0.2);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
 }
 
 .toggle-icon {
@@ -772,7 +781,7 @@ body {
     display: none;
     padding: 1.5rem;
     background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 165, 0, 0.2);
+    border: 1px solid rgba(138, 43, 226, 0.2);
     border-top: none;
     margin-top: -1px;
 }
@@ -782,7 +791,7 @@ body {
 }
 
 .toggle-content h4 {
-    color: #FFA500;
+    color: #DA70D6;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
@@ -805,7 +814,7 @@ body {
 
 .toggle-content li:before {
     content: "•";
-    color: #FFA500;
+    color: #DA70D6;
     position: absolute;
     left: 0;
 }
@@ -828,11 +837,11 @@ body {
 
 .details-side::-webkit-scrollbar-thumb,
 .gallery-side::-webkit-scrollbar-thumb {
-    background: rgba(255, 165, 0, 0.5);
+    background: rgba(138, 43, 226, 0.5);
     border-radius: 4px;
 }
 
 .details-side::-webkit-scrollbar-thumb:hover,
 .gallery-side::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 165, 0, 0.7);
+    background: rgba(138, 43, 226, 0.7);
 }
