@@ -393,42 +393,49 @@ body {
     border-radius: 3px;
 }
 
-/* CARD HEADER */
+/* CARD HEADER - FIXED FOR OVERLAP */
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem; /* Add gap between items */
     margin-bottom: 1.5rem;
     transition: all 0.4s ease;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .stage-badge {
     background: rgba(255, 165, 0, 0.2);
     border: 1px solid #FFA500;
     color: #FFD700;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem; /* Reduced padding */
     border-radius: 20px;
     font-weight: bold;
-    font-size: 0.75rem;
+    font-size: 0.7rem; /* Slightly smaller */
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
     transition: all 0.4s ease;
+    flex-shrink: 0; /* Prevent shrinking */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .form-card.active .stage-badge {
-    font-size: 0.9rem;
-    padding: 0.7rem 1.3rem;
+    font-size: 0.85rem;
+    padding: 0.6rem 1.1rem;
 }
 
 .stage-number {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Reduced from 1.8rem */
     font-weight: bold;
     color: rgba(255, 165, 0, 0.5);
     transition: all 0.4s ease;
+    flex-shrink: 0; /* Prevent shrinking */
+    min-width: 2.5rem; /* Ensure minimum space */
+    text-align: right;
 }
 
 .form-card.active .stage-number {
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* Reduced from 2.5rem */
     color: rgba(255, 165, 0, 0.9);
 }
 
