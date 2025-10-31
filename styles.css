@@ -269,8 +269,8 @@ body {
     display: flex;
     gap: 2rem;
     padding: 2rem 0;
-    padding-left: calc(50vw - 500px); /* Center first card */
-    padding-right: calc(50vw - 500px); /* Center last card */
+    padding-left: calc(50vw - 500px);
+    padding-right: calc(50vw - 500px);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
@@ -398,25 +398,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem; /* Add gap between items */
+    gap: 1rem;
     margin-bottom: 1.5rem;
     transition: all 0.4s ease;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap;
 }
 
 .stage-badge {
     background: rgba(255, 165, 0, 0.2);
     border: 1px solid #FFA500;
     color: #FFD700;
-    padding: 0.4rem 0.8rem; /* Reduced padding */
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-weight: bold;
-    font-size: 0.7rem; /* Slightly smaller */
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     transition: all 0.4s ease;
-    flex-shrink: 0; /* Prevent shrinking */
-    white-space: nowrap; /* Prevent text wrapping */
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .form-card.active .stage-badge {
@@ -425,21 +425,21 @@ body {
 }
 
 .stage-number {
-    font-size: 1.6rem; /* Reduced from 1.8rem */
+    font-size: 1.6rem;
     font-weight: bold;
     color: rgba(255, 165, 0, 0.5);
     transition: all 0.4s ease;
-    flex-shrink: 0; /* Prevent shrinking */
-    min-width: 2.5rem; /* Ensure minimum space */
+    flex-shrink: 0;
+    min-width: 2.5rem;
     text-align: right;
 }
 
 .form-card.active .stage-number {
-    font-size: 2.2rem; /* Reduced from 2.5rem */
+    font-size: 2.2rem;
     color: rgba(255, 165, 0, 0.9);
 }
 
-/* BLUEPRINT CONTENT */
+/* BLUEPRINT CONTENT - FIXED OVERFLOW */
 .blueprint-content {
     position: relative;
     padding: 2rem;
@@ -447,10 +447,14 @@ body {
     border: 1px dashed rgba(138, 43, 226, 0.4);
     border-radius: 8px;
     transition: all 0.4s ease;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .blueprint-grid {
     position: relative;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .blueprint-grid::before {
@@ -476,10 +480,30 @@ body {
     font-family: 'Courier New', monospace;
     letter-spacing: 0.1em;
     transition: all 0.4s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .form-card.active .blueprint-title {
     font-size: 1.8rem;
+}
+
+.blueprint-section {
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.blueprint-section-title {
+    color: #8A2BE2;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .blueprint-list {
@@ -491,6 +515,7 @@ body {
     line-height: 1.8;
     color: #b0b0b0;
     transition: all 0.4s ease;
+    max-width: 100%;
 }
 
 .form-card.active .blueprint-list {
@@ -502,6 +527,43 @@ body {
     margin-bottom: 0.8rem;
     position: relative;
     z-index: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    padding-right: 0.5rem;
+}
+
+.blueprint-list li strong {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Color dots styling */
+.color-dots {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dot.purple {
+    background: #8A2BE2;
+}
+
+.dot.white {
+    background: #ffffff;
+}
+
+.dot.pink {
+    background: #FF1493;
 }
 
 /* FORM SCREENSHOT - Free-standing, no frame constraints */
