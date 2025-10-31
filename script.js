@@ -33,7 +33,77 @@ if (horizontalScrollWrapper && progressBar) {
         const scrollPercentage = (scrollLeft / scrollWidth) * 100;
         
         progressBar.style.width = `${scrollPercentage}%`;
+        
+        // Update active card based on scroll position
+        updateActiveCard();
     });
+}
+
+// ========================================
+// ACTIVE CARD DETECTION
+// ========================================
+
+function updateActiveCard() {
+    if (!horizontalScrollWrapper) return;
+    
+    const cards = horizontalScrollWrapper.querySelectorAll('.form-card');
+    const containerCenter = horizontalScrollWrapper.offsetLeft + (horizontalScrollWrapper.clientWidth / 2);
+    
+    let closestCard = null;
+    let closestDistance = Infinity;
+    
+    cards.forEach(card => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + (cardRect.width / 2);
+        const distance = Math.abs(containerCenter - cardCenter);
+        
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestCard = card;
+        }
+    });
+    
+    // Remove active class from all cards
+    cards.forEach(card => card.classList.remove('active'));
+    
+    // Add active class to closest card
+    if (closestCard && closestDistance < 400) {
+        closestCard.classList.add('active');
+    }
+}
+
+// Initial check
+if (horizontalScrollWrapper) {
+    setTimeout(updateActiveCard, 100);
+}
+
+// ========================================
+// SCREENSHOT ZOOM ON CLICK
+// ========================================
+
+const formCards = document.querySelectorAll('.form-card');
+
+formCards.forEach(card => {
+    const screenshot = card.querySelector('.form-screenshot');
+    if (screenshot) {
+        screenshot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const img = screenshot.querySelector('img');
+            if (img && img.src) {
+                openScreenshotLightbox(img.src, card.querySelector('.stage-badge')?.textContent || 'Screenshot');
+            }
+        });
+    }
+});
+
+function openScreenshotLightbox(imgSrc, caption) {
+    if (lightbox && lightboxImage && lightboxCaption) {
+        lightboxImage.src = imgSrc;
+        lightboxImage.alt = caption;
+        lightboxCaption.textContent = caption;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 // ========================================
@@ -92,27 +162,35 @@ function closeLightbox() {
     document.body.style.overflow = '';
 }
 
-lightboxClose.addEventListener('click', closeLightbox);
+if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+}
 
 // Close on background click
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        closeLightbox();
-    }
-});
+if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+}
 
 // Navigation
-lightboxPrev.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const newIndex = currentFrameIndex > 0 ? currentFrameIndex - 1 : currentSectionFrames.length - 1;
-    showLightboxFrame(newIndex);
-});
+if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const newIndex = currentFrameIndex > 0 ? currentFrameIndex - 1 : currentSectionFrames.length - 1;
+        showLightboxFrame(newIndex);
+    });
+}
 
-lightboxNext.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const newIndex = currentFrameIndex < currentSectionFrames.length - 1 ? currentFrameIndex + 1 : 0;
-    showLightboxFrame(newIndex);
-});
+if (lightboxNext) {
+    lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const newIndex = currentFrameIndex < currentSectionFrames.length - 1 ? currentFrameIndex + 1 : 0;
+        showLightboxFrame(newIndex);
+    });
+}
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
@@ -130,6 +208,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Prevent scrolling when lightbox is open
-lightbox.addEventListener('wheel', (e) => {
-    e.preventDefault();
-}, { passive: false });
+if (lightbox) {
+    lightbox.addEventListener('wheel', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+}
